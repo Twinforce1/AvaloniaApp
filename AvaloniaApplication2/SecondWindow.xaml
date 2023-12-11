@@ -1,0 +1,10 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="AvaloniaApplication2.SecondWindow"
+        Title="Second Window"
+        Background="#2a2727">
+    <Grid>
+        <!-- Добавьте здесь содержимое вашего второго окна -->
+        <TextBlock Text="Это второе окно!" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White"/>
+    </Grid>
+</Window>

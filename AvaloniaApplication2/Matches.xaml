@@ -1,0 +1,48 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Class="AvaloniaApplication2.Matches"
+             Background="#2a2727">
+    <Grid>
+        <Grid>
+            <Grid.RowDefinitions>
+                <!-- Первая строка для первого изображения -->
+                <RowDefinition Height="320"/>
+                <!-- Вторая строка для второго изображения -->
+                <RowDefinition Height="100"/>
+                <!-- Третья строка для третьего изображения -->
+                <RowDefinition Height="100"/>
+                <!-- Четвёртая строка для четвёртого изображения -->
+                <RowDefinition Height="100"/>
+                <!-- Пятая строка для пятого изображения -->
+                <RowDefinition Height="70"/>
+                <!-- Шестая строка для шестого изображения -->
+                <RowDefinition Height="130"/>
+                <!-- Седьмая строка для седьмого изображения -->
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Svg Grid.Row="0" Path="Assets/Header@2x.svg" HorizontalAlignment="Center" VerticalAlignment="Top" Stretch="Uniform" Width="1000" Height="300"/>
+            <Svg Grid.Row="1" Path="Assets/История матчей.svg" HorizontalAlignment="Center" VerticalAlignment="Top" Stretch="Uniform" Width="200" Height="100"/>
+            
+        </Grid>    
+        <Grid>
+            <Border BorderBrush="Red" BorderThickness="5" HorizontalAlignment="Center" VerticalAlignment="Bottom" Width="610" Height="110" CornerRadius="45">
+                <DockPanel HorizontalAlignment="Center" VerticalAlignment="Bottom">
+                    <!-- Иконка 1 -->
+                    <Button DockPanel.Dock="Left" Click="OnGoBackMainButtonClick" Width="200" Height="100" Background="#2a2727" CornerRadius="45">
+                        <Svg Path="Assets/Home/Home_fill.svg"/>
+                    </Button>
+                    
+                    <!-- Иконка 2 -->
+                    <Button DockPanel.Dock="Left" Width="200" Height="100" Background="#2a2727" CornerRadius="45">
+                        <Svg Path="Assets/Search/Search_fill.svg"/>
+                    </Button>
+
+                    <!-- Иконка 3 -->
+                    <Button DockPanel.Dock="Left" Click="OnGoBackSecondButtonClick" Width="200" Height="100" Background="#2a2727" CornerRadius="45">
+                        <Svg Path="Assets/Account/User.svg"/>
+                    </Button>
+                </DockPanel>
+            </Border>
+        </Grid>
+    </Grid>    
+</UserControl>

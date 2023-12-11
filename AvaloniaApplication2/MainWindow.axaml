@@ -1,0 +1,6 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="AvaloniaApplication2.MainWindow"
+        Background="#2a2727">
+    <!-- Остальной код MainWindow.axaml без mainContent -->
+</Window>
