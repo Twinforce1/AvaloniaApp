@@ -20,28 +20,50 @@
                 <!-- Седьмая строка для седьмого изображения -->
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
+            <!-- Шапка -->
             <Svg Grid.Row="0" Path="Assets/Header@2x.svg" HorizontalAlignment="Center" VerticalAlignment="Top" Stretch="Uniform" Width="1000" Height="300"/>
             <Svg Grid.Row="1" Path="Assets/Результаты поиска.svg" HorizontalAlignment="Center" VerticalAlignment="Top" Stretch="Uniform" Width="200" Height="100"/>
             <Svg Grid.Row="2" Path="Assets/State=Default.svg" HorizontalAlignment="Center" VerticalAlignment="Top" Stretch="Uniform" Width="350" Height="300"/>
-            <!-- <Button Grid.Row="3" Background="Transparent" HorizontalAlignment="Center" VerticalAlignment="Top" Width="40" Height="40" Margin="-295,10,0,0" Click="OnSearchButtonClick"> -->
+            <!-- Шапка -->
+            
+            <!-- Строка поиска -->
+            <TextBox Grid.Row="2" Name="playerNameTextBox" Background="Transparent" HorizontalAlignment="Center" VerticalAlignment="Top" Width="285" Height="35" Margin="32,12,0,0"/>
             <Button Grid.Row="2" Background="Transparent" HorizontalAlignment="Center" VerticalAlignment="Top" Width="40" Height="40" Margin="-295,10,0,0" Name="OnSearchButtonClick">
                 <Svg Path="Assets/Search.svg" Width="37" Height="37"/>
             </Button>
-            <TextBox Grid.Row="2" Name="playerNameTextBox" Background="Transparent" HorizontalAlignment="Center" VerticalAlignment="Top" Width="285" Height="35" Margin="32,12,0,0"/>
-            <Button Grid.Row="4" Click="ProfilePlayerProfileClick">
-                <Svg Path="Assets/Frame 1.svg"/>
-            </Button>
-                <Grid >
-                    <!-- Добавьте Border для отображения контента -->
-                    <Border x:Name="contentBorder" Background="#2a2727" BorderBrush="Red" BorderThickness="5" CornerRadius="45" Width="350" Height="150" Padding="30" Margin="0,600,0,0" HorizontalAlignment="Center">
+            <!-- Строка поиска -->
+            
+            <!-- Тестовая кнопка на страницу с матчами -->
+            <!-- <Button Grid.Row="4" Click="OpenPlayerPageButton_Click"> -->
+            <!--     <Svg Path="Assets/Frame 1.svg"/> -->
+            <!-- </Button> -->
+            <!-- Тестовая кнопка на страницу с матчами -->
+            
+            <!-- Результат поиска -->
+            <Grid >
+                    <Border x:Name="contentBorder" Background="#2a2727" BorderBrush="Red" BorderThickness="5" CornerRadius="45" Width="350" Height="150" Padding="30" Margin="0,600,0,0" HorizontalAlignment="Center" IsVisible="False">
                         <StackPanel x:Name="_contentStackPanel">
-                            <TextBlock x:Name="resultTextBlock" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,100,0"/>
-                            <TextBlock x:Name="ratingTextBlock" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,30,100,0"/>
-                            <Image x:Name="avatarImage" Width="100" Height="100" VerticalAlignment="Center" Margin="0,-25,190,0"/>
+                            <TextBlock x:Name="resultTextBlock" FontSize="18" FontWeight="Bold" FontFamily="SF Pro Display" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,80,0"/>
+                            <Image x:Name="avatarImage" Width="100" Height="100" VerticalAlignment="Center" Margin="0,-35,190,0">
+                                <Image.Clip>
+                                    <EllipseGeometry RadiusX="50" RadiusY="50" Center="50,50"/>
+                                </Image.Clip>
+                            </Image>
+                            <Image x:Name="ImagePath" Width="50" Height="50" HorizontalAlignment="Center" Margin="0,-150,-250,0"/>
+                            <TextBlock x:Name="matchesTextBlock" FontSize="16" FontWeight="Bold" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,30,0,0"/>
+                            <TextBlock x:Name="winLossTextBlock" FontSize="16" FontWeight="Bold" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,60,0,0"/>
+                            <TextBlock Name="KillsTextBlock" IsVisible="False"/>
+                            <TextBlock Name="DeathsTextBlock" IsVisible="False"/>
+                            <TextBlock Name="AssistsTextBlock" IsVisible="False"/>
+                            <Image Name="HeroImage" IsVisible="False"/>
                         </StackPanel>
                     </Border>
-                </Grid>
+            </Grid>
+            <!-- Результат поиска -->
+            
         </Grid>
+        
+        <!-- ToolBar -->
         <Grid>
             <Border BorderBrush="Red" BorderThickness="5" HorizontalAlignment="Center" VerticalAlignment="Bottom" Width="610" Height="110" CornerRadius="45">
                 <DockPanel HorizontalAlignment="Center" VerticalAlignment="Bottom">
@@ -62,5 +84,6 @@
                 </DockPanel>
             </Border>
         </Grid>
+        <!-- ToolBar -->
     </Grid>    
 </UserControl>

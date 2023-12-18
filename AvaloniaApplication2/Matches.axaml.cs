@@ -4,7 +4,7 @@ using Avalonia.Markup.Xaml;
 
 namespace AvaloniaApplication2
 {
-    public class Matches : UserControl
+    public partial class Matches : UserControl
     {
         public Matches()
         {

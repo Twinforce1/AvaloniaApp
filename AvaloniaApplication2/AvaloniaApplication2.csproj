@@ -13,6 +13,8 @@
 
 
     <ItemGroup>
+        <AvaloniaResource Include="SecondPage.xaml" />
+        <AvaloniaResource Include="SecondWindow.xaml" />
         <PackageReference Include="Avalonia" Version="11.0.5"/>
         <PackageReference Include="Avalonia.Desktop" Version="11.0.5"/>
         <PackageReference Include="Avalonia.Skia" Version="11.0.5" />
@@ -21,16 +23,38 @@
         <PackageReference Include="Avalonia.Themes.Fluent" Version="11.0.5"/>
         <PackageReference Include="Avalonia.Fonts.Inter" Version="11.0.5"/>
         <AvaloniaResource Include="Assets\**"/>
-        <AvaloniaResource Include="SecondWindow.xaml" />
-        <AvaloniaResource Include="SecondPage.xaml" />
         <!--Condition below is needed to remove Avalonia.Diagnostics package from build output in Release configuration.-->
         <PackageReference Condition="'$(Configuration)' == 'Debug'" Include="Avalonia.Diagnostics" Version="11.0.5"/>
+        <PackageReference Include="EntityFramework" Version="6.4.4" />
+        <PackageReference Include="MessageBox.Avalonia" Version="3.1.5.1" />
         <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+        <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="7.0.11" />
         <PackageReference Include="OpenDotaApi" Version="1.3.7" />
+        <None Remove="Assets\heroes\Crystal_Maiden_icon.png" />
+        <AvaloniaResource Include="Assets\heroes\Crystal_Maiden_icon.png" />
+        <None Remove="Assets\heroes\Ancient_Apparition_icon.png" />
+        <AvaloniaResource Include="Assets\heroes\Ancient_Apparition_icon.png" />
     </ItemGroup>
 
 
     <ItemGroup>
       <Compile Remove="OpenDotaApiClient.cs" />
+      <Compile Update="MainPage.axaml.cs">
+        <SubType>Code</SubType>
+        <DependentUpon>MainPage.axaml</DependentUpon>
+      </Compile>
+      <Compile Update="MainWindow.axaml.cs">
+        <SubType>Code</SubType>
+        <DependentUpon>MainWindow.axaml</DependentUpon>
+      </Compile>
+      <Compile Update="SearchResult.axaml.cs">
+        <DependentUpon>SearchResult.axaml</DependentUpon>
+        <SubType>Code</SubType>
+      </Compile>
+    </ItemGroup>
+
+
+    <ItemGroup>
+      <Folder Include="Assets\heroes\" />
     </ItemGroup>
 </Project>

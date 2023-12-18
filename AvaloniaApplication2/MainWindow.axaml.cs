@@ -45,11 +45,7 @@ namespace AvaloniaApplication2
             this.Content = searchResult;
         }
 
-        public void NavigateToPlayerClick()
-        {
-            var playerProfile = new ProfilePlayer(this);
-            this.Content = playerProfile;
-        }
+        
         public void GoBackToMainPage()
         {
             ShowMainPage();

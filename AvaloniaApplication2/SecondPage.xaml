@@ -13,26 +13,76 @@
                 <!-- Третья строка для третьего изображения -->
                 <RowDefinition Height="120"/>
                 <!-- Четвёртая строка для четвёртого изображения -->
-                <RowDefinition Height="70"/>
+                <RowDefinition Height="30"/>
                 <!-- Пятая строка для пятого изображения -->
                 <RowDefinition Height="200"/>
                 <!-- Шестая строка для шестого изображения -->
-                <RowDefinition Height="70"/>
+                <RowDefinition Height="30"/>
                 <!-- Седьмая строка для седьмого изображения -->
                 <RowDefinition Height="200"/>
             </Grid.RowDefinitions>
+            <!-- Шапка -->
             <Svg Grid.Row="0" Path="Assets/Header@2x.svg" HorizontalAlignment="Center" VerticalAlignment="Top" Stretch="Uniform" Width="1000" Height="300"/>
             <Svg Grid.Row="1" Path="Assets/Мой профиль.svg" HorizontalAlignment="Center" VerticalAlignment="Top" Stretch="Uniform" Width="200" Height="100"/>
-            <Svg Grid.Row="2" Path="Assets/Property 1=Variant3.svg" HorizontalAlignment="Center" VerticalAlignment="Top" Stretch="Uniform" Width="250" Height="200"/>
+            <!-- <Button Grid.Row="2" Click="SaveSettingsButton_Click" HorizontalAlignment="Center" VerticalAlignment="Top" Width="200" Height="150" Margin="0,0,0,0" > -->
+            <!--     <Svg Path="Assets/Property 1=Variant3.svg" Stretch="Uniform"/> -->
+            <!-- </Button> -->
+            <StackPanel Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Top">
+                <Svg Path="Assets/Property 1=Variant3.svg" Stretch="Uniform" Width="200" Height="150"/>
+                <Button Width="190" Height="45" Margin="5,-150,0,0" Click="SaveSettingsButton_Click" CornerRadius="45"/>
+            </StackPanel>
             <TextBlock Grid.Row="3" Text="Общие" Margin="320,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Top" TextWrapping="Wrap" FontFamily="SF Pro Display" LineHeight="45" FontWeight="Bold" FontSize="25" Foreground="White" Width="770" Height="400"/>
-            <Svg Grid.Row="4" Path="Assets/Property 1=Settings GeneraL.svg" HorizontalAlignment="Center" VerticalAlignment="Top" Stretch="Uniform" Width="450" Height="300"/>
+            <Border Grid.Row="4" Background="#2a2727" BorderBrush="Red" BorderThickness="5" CornerRadius="45" Width="350" Height="150" Padding="30" HorizontalAlignment="Center">
+                <Grid>
+        
+                    <StackPanel Margin="10">
+                        <!-- <TextBlock Text="Enter Username:"/> -->
+                        <!-- <TextBox x:Name="UsernameTextBox" Margin="0,0,0,10"/> -->
+        
+                        <!-- <TextBlock Text="Enter Email:"/> -->
+                        <!-- <TextBox x:Name="EmailTextBox" Margin="0,0,0,10"/> -->
+                        <TextBlock Text="Язык интерфейса:                     Русский" FontSize="14" FontWeight="Bold" FontFamily="SF Pro Display" Foreground="White" Padding="0,0,0,10"/>
+                        <!-- <CheckBox x:Name="NotificationsCheckBox" Content="Уведомления" Margin="0,0,0,10" FontSize="14" FontWeight="Bold" FontFamily="SF Pro Display" Foreground="White"/> -->
+                        <!-- <CheckBox x:Name="MailingCheckBox" Content="Enable Mailing" Margin="0,0,0,10"/> -->
+                        <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+                            <TextBlock Text="Уведомления" VerticalAlignment="Center" FontSize="14" FontWeight="Bold" FontFamily="SF Pro Display" Foreground="White"/>
+                            <CheckBox x:Name="NotificationsCheckBox" Margin="145,0,0,0" FontSize="14" FontWeight="Bold" FontFamily="SF Pro Display" Foreground="White"/>
+                        </StackPanel>
+        
+                        
+                    </StackPanel>
+                </Grid>
+            </Border>
             <TextBlock Grid.Row="5" Text="Почта и рассылка" Margin="320,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Top" TextWrapping="Wrap" FontFamily="SF Pro Display" LineHeight="45" FontWeight="Bold" FontSize="25" Foreground="White" Width="770" Height="400"/>
-            <Svg Grid.Row="6" Path="Assets/Property 1=Settings Email.svg" HorizontalAlignment="Center" VerticalAlignment="Top" Stretch="Uniform" Width="450" Height="300"/>
+            <Border Grid.Row="6" Background="#2a2727" BorderBrush="Red" BorderThickness="5" CornerRadius="45" Width="350" Height="150" Padding="30" HorizontalAlignment="Center">
+                <Grid>
+        
+                    <StackPanel Margin="10">
+                        <!-- <TextBlock Text="Enter Username:"/> -->
+                        <!-- <TextBox x:Name="UsernameTextBox" Margin="0,0,0,10"/> -->
+        
+                        <TextBlock Text="Почта:" FontSize="14" FontWeight="Bold" FontFamily="SF Pro Display" Foreground="White"/>
+                        <TextBox x:Name="EmailTextBox" Margin="100,-25,0,10"/>
+
+                        <!-- <CheckBox x:Name="NotificationsCheckBox" Content="Enable Notifications" Margin="0,0,0,10"/> -->
+                        <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+                            <TextBlock Text="Рассылка" VerticalAlignment="Center" FontSize="14" FontWeight="Bold" FontFamily="SF Pro Display" Foreground="White"/>
+                            <CheckBox x:Name="MailingCheckBox" Margin="175,0,0,0" FontSize="14" FontWeight="Bold" FontFamily="SF Pro Display" Foreground="White"/>
+                        </StackPanel>
+                        <!-- <CheckBox x:Name="MailingCheckBox" Content="Рассылка" Margin="0,0,0,10" FontSize="14" FontWeight="Bold" FontFamily="SF Pro Display" Foreground="White"/> -->
+        
+                        
+                    </StackPanel>
+                </Grid>
+            </Border>
+            <!-- Шапка -->
+            
         </Grid>
+        
+        <!-- Tool Bar -->
         <Grid>
             <Border BorderBrush="Red" BorderThickness="5" HorizontalAlignment="Center" VerticalAlignment="Bottom" Width="610" Height="110" CornerRadius="45">
                 <DockPanel HorizontalAlignment="Center" VerticalAlignment="Bottom">
-                    <!-- <Svg Width="600" Height="100" Path="Assets/Property 1=Home.svg"/> -->
                     <!-- Иконка 1 -->
                     <Button DockPanel.Dock="Left" Click="OnGoToMainPageClick" Width="200" Height="100" Background="#2a2727" CornerRadius="45">
                         <Svg Path="Assets/Home/Home_fill.svg"/>
@@ -49,6 +99,8 @@
                     </Button>
                 </DockPanel>
             </Border>
-        </Grid>    
+        </Grid>  
+        <!-- Tool Bar -->
+        
     </Grid>
 </UserControl>

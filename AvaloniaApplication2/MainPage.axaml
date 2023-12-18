@@ -20,11 +20,17 @@
                 <!-- Седьмая строка для седьмого изображения -->
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
+            
+            <!-- Шапка -->
             <Svg Grid.Row="0" Path="Assets/Header@2x.svg" HorizontalAlignment="Center" VerticalAlignment="Top" Stretch="Uniform" Width="1000" Height="300"/>
             <Svg Grid.Row="2" Path="Assets/Добро пожаловать в.svg" HorizontalAlignment="Center" VerticalAlignment="Top" Stretch="Uniform" Width="450" Height="300"/>
             <Svg Grid.Row="3" Path="Assets/Frame 1.svg" HorizontalAlignment="Center" VerticalAlignment="Top" Stretch="Uniform" Width="350" Height="300"/>
             <TextBlock Grid.Row="5" Text="Мы регистрируем и изучаем информацию о каждой открытой игре, применяя её для разработки индивидуальных, удобных и понятных интерфейсов, которые помогут игрокам в исследовании и обучении." HorizontalAlignment="Center" VerticalAlignment="Top" TextWrapping="Wrap" FontFamily="SF Pro Display" LineHeight="45" FontWeight="Bold" FontSize="22" Foreground="Gray" Width="770" Height="400"/>
+            <!-- Шапка -->
+            
         </Grid>
+        
+        <!-- ToolBar -->
         <Grid>
             <Border BorderBrush="Red" BorderThickness="5" HorizontalAlignment="Center" VerticalAlignment="Bottom" Width="610" Height="110" CornerRadius="45">
                 <DockPanel HorizontalAlignment="Center" VerticalAlignment="Bottom">
@@ -45,5 +51,7 @@
                 </DockPanel>
             </Border>
         </Grid>
+        <!-- ToolBar -->
+        
     </Grid>    
 </UserControl>
