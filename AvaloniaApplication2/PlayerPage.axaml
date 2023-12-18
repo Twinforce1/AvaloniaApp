@@ -1,0 +1,208 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        x:Class="AvaloniaApplication2.PlayerPage" Background="#2a2727">
+    <Grid>
+        <Grid>
+            <Grid.RowDefinitions>
+                    <!-- Первая строка для первого изображения -->
+                    <RowDefinition Height="300"/>
+                    <!-- Вторая строка для второго изображения -->
+                    <RowDefinition Height="100"/>
+                    <!-- Третья строка для третьего изображения -->
+                    <RowDefinition Height="100"/>
+                    <!-- Четвёртая строка для четвёртого изображения -->
+                    <RowDefinition Height="100"/>
+                    <!-- Пятая строка для пятого изображения -->
+                    <RowDefinition Height="70"/>
+                    <!-- Шестая строка для шестого изображения -->
+                    <RowDefinition Height="130"/>
+                    <!-- Седьмая строка для седьмого изображения -->
+                    <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            
+            <!-- Шапка -->
+            <Svg Grid.Row="0" Path="Assets/Header@2x.svg" HorizontalAlignment="Center" VerticalAlignment="Top" Stretch="Uniform" Width="1000" Height="300"/>
+            <Svg Grid.Row="1" Path="Assets/Профиль игрока.svg" HorizontalAlignment="Center" VerticalAlignment="Top" Stretch="Uniform" Width="200" Height="100"/>
+            <!-- Шапка -->
+        </Grid>
+        <!-- Профиль -->
+        <Border Background="#2a2727" BorderBrush="Red" BorderThickness="5" CornerRadius="45" Width="350" Height="150" Padding="30" Margin="0,0,0,100" HorizontalAlignment="Center">
+            <StackPanel Margin="10">
+                <TextBlock x:Name="PlayerNameTextBlock" FontSize="18" FontWeight="Bold" FontFamily="SF Pro Display" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,80,0"/>
+                <Image x:Name="AvatarImage" Width="100" Height="100" VerticalAlignment="Center" Margin="0,-35,190,0"/>
+                <Image x:Name="ImagePath" Width="70" Height="70" HorizontalAlignment="Center" Margin="0,-150,-250,0"/>
+                <TextBlock FontSize="16" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,60,0,0">
+                    <TextBlock x:Name="MatchesTextBlock" Foreground="Red" />
+                    <TextBlock Text="Матчей сыграно" Foreground="White" />
+                </TextBlock>
+                <TextBlock FontSize="16" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,30,0,0">
+                    <TextBlock x:Name="WinLossTextBlock" Foreground="Green" />
+                    <TextBlock Text="Винрейт" Foreground="White" />
+                </TextBlock>
+                
+
+                </StackPanel>
+        </Border>
+        <!-- Профиль -->
+        
+        <!-- Последний матч -->
+        <Border Background="#2a2727" BorderBrush="Red" BorderThickness="5" CornerRadius="45" Width="350" Height="150" Padding="30" Margin="0,600,0,0" HorizontalAlignment="Center">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+                <Svg Path="Assets/Lane 4.svg" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,0,0,0" Grid.Column="0"/>
+        
+                <StackPanel Grid.Column="1" Margin="10">
+                    <TextBlock Text="Итог матча" FontSize="12" FontWeight="Bold" Foreground="White" Margin="100,0,0,0"/>
+                    <TextBlock x:Name="Resultmatch" FontSize="12" FontWeight="Bold" Foreground="White" Margin="200,-15,0,0" />
+                    <TextBlock Text="Убийств" FontSize="12" FontWeight="Bold" Foreground="White" Margin="100,0,0,0"/>
+                    <TextBlock x:Name="KillsTextBlock" FontSize="12" FontWeight="Bold" Foreground="White" Margin="200,-15,0,0" />
+                    <TextBlock Text="Смертей" FontSize="12" FontWeight="Bold" Foreground="White" Margin="100,0,0,0"/>
+                    <TextBlock x:Name="DeathsTextBlock" FontSize="12" FontWeight="Bold" Foreground="White" Margin="200,-15,0,0" />
+                    <TextBlock Text="Помощи" FontSize="12" FontWeight="Bold" Foreground="White" Margin="100,0,0,0"/>
+                    <TextBlock x:Name="AssistsTextBlock" FontSize="12" FontWeight="Bold" Foreground="White" Margin="200,-15,0,0" />
+                    <Image x:Name="HeroImage" Width="100" Height="100" Margin="-200,-80,0,0">
+                        <Image.Clip>
+                            <EllipseGeometry RadiusX="27" RadiusY="27" Center="58,27"/>
+                        </Image.Clip>
+                    </Image>
+                </StackPanel>
+            </Grid>
+        </Border>
+        <!-- Последний матч -->
+        
+        <!-- ~1~ ToolBar @1@ -->
+        <!-- <Grid> -->
+        <!--     <Border BorderBrush="Red" BorderThickness="5" HorizontalAlignment="Center" VerticalAlignment="Bottom" Width="610" Height="110" CornerRadius="45"> -->
+        <!--         <DockPanel HorizontalAlignment="Center" VerticalAlignment="Bottom"> -->
+        <!--             ~1~ Иконка 1 @1@ -->
+        <!--             <Button DockPanel.Dock="Left" Click="OnGoToMainPageClick" Width="200" Height="100" Background="#2a2727" CornerRadius="45"> -->
+        <!--                 <Svg Path="Assets/Home/Home_fill.svg"/> -->
+        <!--             </Button> -->
+        <!-- -->
+        <!--             ~1~ Иконка 2 @1@ -->
+        <!--             <Button DockPanel.Dock="Left" Click="OnSearchButtonClick" Width="200" Height="100" Background="#2a2727" CornerRadius="45"> -->
+        <!--                 <Svg Path="Assets/Search/Search_fill.svg"/> -->
+        <!--             </Button> -->
+        <!-- -->
+        <!--             ~1~ Иконка 3 @1@ -->
+        <!--             <Button DockPanel.Dock="Left" Click="OnGoBackSecondButtonClick" Width="200" Height="100" Background="#2a2727" CornerRadius="45"> -->
+        <!--                 <Svg Path="Assets/Account/User.svg"/> -->
+        <!--             </Button> -->
+        <!--         </DockPanel> -->
+        <!--     </Border> -->
+        <!-- </Grid> -->
+        <!-- ~1~ ToolBar @1@ -->
+        <!-- ToolBar -->
+        <Grid>
+            <Border BorderBrush="Red" BorderThickness="5" HorizontalAlignment="Center" VerticalAlignment="Bottom" Width="610" Height="110" CornerRadius="45">
+                <DockPanel HorizontalAlignment="Center" VerticalAlignment="Bottom">
+                    <!-- Иконка 1 -->
+                    <Button DockPanel.Dock="Left" Click="OnGoToMainPageClick" Width="200" Height="100" Background="#2a2727" CornerRadius="45">
+                        <Svg Path="Assets/Home/Home_fill.svg"/>
+                    </Button>
+                    
+                    <!-- Иконка 2 -->
+                    <Button DockPanel.Dock="Left" Click="OnSearchButtonClick" Width="200" Height="100" Background="#2a2727" CornerRadius="45">
+                        <Svg Path="Assets/Search/Search_fill.svg"/>
+                    </Button>
+
+                    <!-- Иконка 3 -->
+                    <Button DockPanel.Dock="Left" Click="OnGoBackSecondButtonClick" Width="200" Height="100" Background="#2a2727" CornerRadius="45">
+                        <Svg Path="Assets/Account/User.svg"/>
+                    </Button>
+                </DockPanel>
+            </Border>
+        </Grid>
+        <!-- ToolBar -->
+        
+    </Grid>
+</UserControl>
+<!-- <UserControl xmlns="https://github.com/avaloniaui" -->
+<!--         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" -->
+    <!--     xmlns:d="http://schemas.microsoft.com/expression/blend/2008" -->
+    <!--     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" -->
+    <!--     mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450" -->
+    <!--     x:Class="AvaloniaApplication2.PlayerPage" Background="#2a2727" -->
+    <!--     > -->
+    <!-- <Grid> -->
+    <!--     <Grid> -->
+    <!--         <Grid.RowDefinitions> -->
+    <!--             ~1~ Первая строка для первого изображения @1@ -->
+    <!--             <RowDefinition Height="320"/> -->
+    <!--             ~1~ Вторая строка для второго изображения @1@ -->
+    <!--             <RowDefinition Height="100"/> -->
+    <!--             ~1~ Третья строка для третьего изображения @1@ -->
+    <!--             <RowDefinition Height="100"/> -->
+    <!--             ~1~ Четвёртая строка для четвёртого изображения @1@ -->
+    <!--             <RowDefinition Height="100"/> -->
+    <!--             ~1~ Пятая строка для пятого изображения @1@ -->
+    <!--             <RowDefinition Height="70"/> -->
+    <!--             ~1~ Шестая строка для шестого изображения @1@ -->
+    <!--             <RowDefinition Height="130"/> -->
+    <!--             ~1~ Седьмая строка для седьмого изображения @1@ -->
+    <!--             <RowDefinition Height="Auto"/> -->
+    <!--         </Grid.RowDefinitions> -->
+    <!--          -->
+    <!--         ~1~ Шапка @1@ -->
+    <!--         <Svg Grid.Row="0" Path="Assets/Header@2x.svg" HorizontalAlignment="Center" VerticalAlignment="Top" Stretch="Uniform" Width="1000" Height="300"/> -->
+    <!--         <Svg Grid.Row="1" Path="Assets/Профиль игрока.svg" HorizontalAlignment="Center" VerticalAlignment="Top" Stretch="Uniform" Width="200" Height="100"/> -->
+    <!--         ~1~ Шапка @1@ -->
+    <!--          -->
+    <!--     </Grid>  -->
+    <!--     <Grid> -->
+    <!--          -->
+    <!--         ~1~ Профиль игрока @1@ -->
+    <!--         <Grid> -->
+    <!--             <Border x:Name="contentBorder" Background="#2a2727" BorderBrush="Red" BorderThickness="5" CornerRadius="45" Width="350" Height="150" Padding="30" Margin="0,600,0,0" HorizontalAlignment="Center" IsVisible="False"> -->
+    <!--                 <StackPanel x:Name="_contentStackPanel"> -->
+    <!--                     <TextBlock x:Name="resultTextBlock" FontSize="18" FontWeight="Bold" FontFamily="SF Pro Display" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,80,0"/> -->
+    <!--                     <Image x:Name="avatarImage" Width="100" Height="100" VerticalAlignment="Center" Margin="0,-35,190,0"> -->
+    <!--                         <Image.Clip> -->
+    <!--                             <EllipseGeometry RadiusX="50" RadiusY="50" Center="50,50"/> -->
+    <!--                         </Image.Clip> -->
+    <!--                     </Image> -->
+    <!--                     <Image x:Name="ImagePath" Width="50" Height="50" HorizontalAlignment="Center" Margin="0,-150,-250,0"/> -->
+    <!--                 </StackPanel> -->
+    <!--             </Border> -->
+    <!--         </Grid> -->
+    <!--         ~1~ Профиль игрока @1@ -->
+    <!--          -->
+    <!--         ~1~ Матчи, винрейт @1@ -->
+    <!--         <Grid> -->
+    <!--             <TextBlock x:Name="matchesTextBlock" FontSize="16" FontWeight="Bold" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,150,0,0"/> -->
+    <!--             <TextBlock x:Name="winLossTextBlock" FontSize="16" FontWeight="Bold" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,200,0,0"/> -->
+    <!--         </Grid> -->
+    <!--         ~1~ Матчи, винрейт @1@ -->
+    <!--          -->
+    <!--     </Grid> -->
+    <!--     ~1~ ToolBar @1@ -->
+    <!--     <Grid> -->
+    <!--         <Border BorderBrush="Red" BorderThickness="5" HorizontalAlignment="Center" VerticalAlignment="Bottom" Width="610" Height="110" CornerRadius="45"> -->
+    <!--             <DockPanel HorizontalAlignment="Center" VerticalAlignment="Bottom"> -->
+    <!--                 ~1~ Иконка 1 @1@ -->
+    <!--                 <Button DockPanel.Dock="Left" Click="OnGoToMainPageClick" Width="200" Height="100" Background="#2a2727" CornerRadius="45"> -->
+    <!--                     <Svg Path="Assets/Home/Home_fill.svg"/> -->
+    <!--                 </Button> -->
+    <!--                  -->
+    <!--                 ~1~ Иконка 2 @1@ -->
+    <!--                 <Button DockPanel.Dock="Left" Click="OnSearchButtonClick" Width="200" Height="100" Background="#2a2727" CornerRadius="45"> -->
+    <!--                     <Svg Path="Assets/Search/Search_fill.svg"/> -->
+    <!--                 </Button> -->
+    <!--                  -->
+    <!--                 ~1~ Иконка 3 @1@ -->
+    <!--                 <Button DockPanel.Dock="Left" Click="OnGoBackSecondButtonClick" Width="200" Height="100" Background="#2a2727" CornerRadius="45"> -->
+    <!--                     <Svg Path="Assets/Account/User.svg"/> -->
+    <!--                 </Button> -->
+    <!--             </DockPanel> -->
+    <!--         </Border> -->
+    <!--     </Grid> -->
+    <!--     ~1~ ToolBar @1@ -->
+    <!--      -->
+    <!-- </Grid>     -->
+<!-- </UserControl> -->
